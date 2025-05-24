@@ -1,7 +1,9 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import type { Metadata } from "next/types";
 import { Dancing_Script, Inter } from "next/font/google";
-import { AuthProvider } from '@/components/AuthProvider';
+import { ClerkProvider } from "@clerk/nextjs";
 import { ThemeProvider } from "@/components/landing-page/theme-provider"
+import { dark, shadesOfPurple } from '@clerk/themes';
 import "./globals.css";
 
 const inter = Inter({
@@ -15,7 +17,7 @@ const dancingScript = Dancing_Script({
 });
 
 export const metadata: Metadata = {
-  title: "Vectora",
+  title: "",
   description: "An AI-powered research assistant with RAG, Image analysis, ai agent capabilities for comprehensive insights",
   authors: [{ name: "Vectora Team" }],
   openGraph: {
@@ -34,20 +36,24 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body
-        className={`${inter.variable} ${dancingScript.variable} font-inter antialiased`}
+      <ClerkProvider
+        appearance={{
+          baseTheme: shadesOfPurple
+        }}
       >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
+        <body
+          className={`${inter.variable} ${dancingScript.variable} font-inter antialiased`}
         >
-          <AuthProvider>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
             {children}
-          </AuthProvider>
-        </ThemeProvider>
-      </body>
+          </ThemeProvider>
+        </body>
+      </ClerkProvider>
     </html>
   );
 }

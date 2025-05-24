@@ -1,18 +1,19 @@
-import { createServerComponentClient } from '@supabase/auth-helpers-nextjs';
-import { cookies } from 'next/headers';
-import { redirect } from 'next/navigation';
+import { auth } from "@clerk/nextjs";
 import LandingPage from "@/components/landing-page/LandingPage";
+import { UserButton } from "@clerk/nextjs";
+import { Brain } from "lucide-react";
+import Image from "next/image";
 
-export default async function Home() {
-  const cookieStore = cookies();
-  const supabase = createServerComponentClient({ cookies: () => cookieStore });
-  const { data: { session } } = await supabase.auth.getSession();
+export default function Home() {
+  const { userId } = auth();
 
-  // If user is already logged in, redirect to dashboard
-  if (session) {
-    redirect('/dashboard');
+  if (!userId) {
+    return <LandingPage />;
   }
 
-  // Show landing page for non-authenticated users
-  return <LandingPage />;
+  return (
+    <main className="min-h-screen w-full flex flex-col items-center justify-start gap-8 py-16 relative text-white">
+      Hello
+    </main>
+  );
 }
