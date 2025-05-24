@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { generateObject, generateText } from "ai";
-import { openrouter, google, openai, visionClient } from "./model-services";
+import { google, openai, groq, visionClient } from "./model-services";
 import { ActivityTracker, ImageData, ModelCallOptions, ResearchState } from "@/types/types";
-import { GOOGLE_MODELS, HYBRID_MODELS, MAX_RETRY_ATTEMPTS, RETRY_DELAY_MS, OPENAI_MODELS, OPENROUTER_MODELS } from "./constants";
+import { GOOGLE_MODELS, HYBRID_MODELS, MAX_RETRY_ATTEMPTS, RETRY_DELAY_MS, OPENAI_MODELS, GROQ_MODELS } from "./constants";
 import { delay } from "./utils";
 
 export async function callModel<T>({
@@ -49,6 +49,10 @@ export async function callModel<T>({
     }
   } else if (actualProvider === "openai" && model.includes("openai/")) {
     modelToUse = model.replace("openai/", "");
+  } else if (actualProvider === "groq" && (model.includes("gpt-") || model.includes("openai/"))) {
+    console.error("Error: Attempted to use OpenAI model name with Groq provider");
+    console.log("Switching to appropriate Groq model instead");
+    modelToUse = GROQ_MODELS.REPORT;
   }
 
   while (attempts < MAX_RETRY_ATTEMPTS) {
@@ -130,10 +134,10 @@ export async function callModel<T>({
               system: "You are an expert image analyst interpreting Google Cloud Vision API results."
             });
           }
-          else if (actualProvider === "openrouter") {
-            analysisModel = OPENROUTER_MODELS.ANALYSIS;
+          else if (actualProvider === "groq") {
+            analysisModel = GROQ_MODELS.ANALYSIS;
             result = await generateText({
-              model: openrouter(analysisModel),
+              model: groq(analysisModel),
               prompt: visionAnalysisPrompt,
               system: "You are an expert image analyst interpreting Google Cloud Vision API results."
             });
@@ -178,9 +182,9 @@ export async function callModel<T>({
             schema: schema,
             ...(providerToUse === "google" ? { structuredOutput } : {})
           });
-        } else if (actualProvider === "openrouter") {
+        } else if (actualProvider === "groq") {
           result = await generateObject({
-            model: openrouter(modelToUse),
+            model: groq(modelToUse),
             prompt,
             system,
             schema
@@ -209,9 +213,9 @@ export async function callModel<T>({
             prompt,
             system
           });
-        } else if (actualProvider === "openrouter") {
+        } else if (actualProvider === "groq") {
           result = await generateText({
-            model: openrouter(modelToUse),
+            model: groq(modelToUse),
             prompt,
             system
           });

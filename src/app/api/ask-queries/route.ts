@@ -2,8 +2,8 @@
 import { NextResponse } from "next/server";
 import { generateObject } from 'ai';
 import { z } from "zod";
-import { openrouter, google, openai } from '@/services/model-services';
-import { OPENROUTER_MODELS, GOOGLE_MODELS, HYBRID_MODELS, OPENAI_MODELS } from '@/services/constants';
+import { groq, google, openai } from '@/services/model-services';
+import { GROQ_MODELS, GOOGLE_MODELS, HYBRID_MODELS, OPENAI_MODELS } from '@/services/constants';
 
 const clarifyResearchGoals = async (
   topic: string,
@@ -20,11 +20,11 @@ const clarifyResearchGoals = async (
   if (modelProvider === 'google') {
     model = google(GOOGLE_MODELS.PLANNING);
     provider = 'google';
-  } else if (modelProvider === 'openrouter') {
+  } else if (modelProvider === 'groq') {
     // Specify a more capable model for OpenRouter
-    model = openrouter(OPENROUTER_MODELS.PLANNING);
-    provider = 'openrouter';
-    console.log(`Selected OpenRouter model: ${OPENROUTER_MODELS.PLANNING}`);
+    model = groq(GROQ_MODELS.PLANNING);
+    provider = 'groq';
+    console.log(`Selected Groq model: ${GROQ_MODELS.PLANNING}`);
   } else if (modelProvider === 'openai') {
     model = openai(OPENAI_MODELS.PLANNING);
     provider = 'openai';

@@ -35,7 +35,7 @@ import Image from "next/image";
 
 const formSchema = z.object({
   input: z.string().min(2).max(200),
-  modelProvider: z.enum(["openrouter", "google", "hybrid", "openai"]),
+  modelProvider: z.enum(["groq", "google", "hybrid", "openai"]),
   embeddingProvider: z.enum(["openai", "google"]),
   useRAG: z.boolean().default(true),
   useVisualizations: z.boolean().default(false),
@@ -66,7 +66,7 @@ const UserInput = () => {
     resolver: zodResolver(formSchema),
     defaultValues: {
       input: "",
-      modelProvider: selectedProvider as "hybrid" | "openrouter" | "google" | "openai",
+      modelProvider: selectedProvider as "hybrid" | "groq" | "google" | "openai",
       embeddingProvider: selectedEmbeddingProvider,
       useRAG: useRAG,
       useVisualizations: visualizationOptions.enabled,
@@ -212,7 +212,7 @@ const UserInput = () => {
               disabled={isLoading}
             >
               <Upload className="h-4 w-4 mr-2" />
-              <span className="sm:inline text-gray-300">Add Images</span>
+              <span className="sm:inline">Add Images</span>
             </Button>
 
             <input
@@ -285,7 +285,7 @@ const UserInput = () => {
                     <SelectContent>
                       <SelectItem value="hybrid">Hybrid (Recommended)</SelectItem>
                       <SelectItem value="openai">OpenAI</SelectItem>
-                      <SelectItem value="openrouter">OpenRouter</SelectItem>
+                      <SelectItem value="groq">Groq</SelectItem>
                       <SelectItem value="google">Google Gemini</SelectItem>
                     </SelectContent>
                   </Select>

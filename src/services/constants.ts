@@ -4,11 +4,11 @@ export const MAX_CONTENT_CHARS = 10000;
 export const MAX_RETRY_ATTEMPTS = 3;
 export const RETRY_DELAY_MS = 1000;
 
-export const OPENROUTER_MODELS = {
-  PLANNING: "google/gemini-flash-1.5-8b-exp",
-  EXTRACTION: "google/gemini-flash-1.5-8b-exp",
-  ANALYSIS: "google/gemini-flash-1.5-8b-exp",
-  REPORT: "google/gemini-flash-1.5-8b-exp"
+export const GROQ_MODELS = {
+  PLANNING: "llama3-70b-8192",
+  EXTRACTION: "llama3-70b-8192",
+  ANALYSIS: "llama3-70b-8192",
+  REPORT: "llama3-70b-8192"
 };
 
 export const OPENAI_MODELS = {

@@ -81,8 +81,12 @@ const ResearchActivities = () => {
       <Collapsible className="w-full" open={isOpen} onOpenChange={setIsOpen}>
         <div className="flex justify-end mb-2">
           <CollapsibleTrigger asChild>
-            <Button variant="outline" size="sm" className="w-9 p-0">
-              <ChevronDown className={`h-4 w-4 ${isOpen ? 'rotate-180' : ''}`} />
+            <Button
+              variant="outline"
+              size="sm"
+              className="w-9 p-0 bg-white/80 dark:bg-gray-800/90 border-gray-300 dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-700 shadow-sm"
+            >
+              <ChevronDown className={`h-4 w-4 ${isOpen ? 'rotate-180' : ''} text-gray-800 dark:text-gray-200`} />
               <span className="sr-only">Toggle</span>
             </Button>
           </CollapsibleTrigger>
