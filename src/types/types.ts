@@ -174,5 +174,5 @@ export interface GraphConfig {
   };
 }
 
-export type ModelProvider = 'openrouter' | 'google' | 'hybrid' | 'openai';
+export type ModelProvider = 'groq' | 'google' | 'hybrid' | 'openai';
 export type EmbeddingProvider = 'openai' | 'google';
