@@ -1,5 +1,6 @@
 import type { Metadata } from "next/types";
 import { Dancing_Script, Inter } from "next/font/google";
+import { AuthProvider } from '@/components/AuthProvider';
 import { ThemeProvider } from "@/components/landing-page/theme-provider"
 import "./globals.css";
 
@@ -42,7 +43,9 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          <AuthProvider>
             {children}
+          </AuthProvider>
         </ThemeProvider>
       </body>
     </html>
