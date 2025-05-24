@@ -34,12 +34,14 @@ interface DeepResearchActions {
   setActivities: (activities: Activity[]) => void,
   setSources: (sources: Source[]) => void,
   setReport: (report: string) => void,
+  updateReport: (report: string) => void; // New action for updating existing reports
   setSelectedProvider: (provider: ModelProvider) => void;
   setSelectedEmbeddingProvider: (provider: EmbeddingProvider) => void;
   setUseRAG: (useRAG: boolean) => void;
   setUploadedImageData: (imageData: ImageData[]) => void;
   setRetrievedDocuments: (documents: RagDocument[]) => void;
   setVisualizationOptions: (options: Partial<VisualizationOptions>) => void;
+  resetState: () => void; // Helper to reset the entire state
 }
 
 const initialState: DeepResearchState = {
@@ -65,7 +67,7 @@ const initialState: DeepResearchState = {
 
 export const useDeepResearchStore = create<
   DeepResearchState & DeepResearchActions
->((set) => ({
+>((set, get) => ({
   ...initialState,
   setTopic: (topic: string) => set({ topic }),
   setQuestions: (questions: string[]) => set({ questions }),
@@ -76,6 +78,12 @@ export const useDeepResearchStore = create<
   setActivities: (activities: Activity[]) => set({ activities }),
   setSources: (sources: Source[]) => set({ sources }),
   setReport: (report: string) => set({ report }),
+  updateReport: (report: string) => {
+    // This method specifically handles updating existing reports
+    // You can add additional logic here like validation, formatting, etc.
+    const formattedReport = report.includes('<report>') ? report : `<report>${report}</report>`;
+    set({ report: formattedReport });
+  },
   setSelectedProvider: (selectedProvider: ModelProvider) => set({ selectedProvider }),
   setSelectedEmbeddingProvider: (selectedEmbeddingProvider: EmbeddingProvider) => set({ selectedEmbeddingProvider }),
   setUseRAG: (useRAG: boolean) => set({ useRAG }),
@@ -88,4 +96,5 @@ export const useDeepResearchStore = create<
         ...options
       }
     })),
+  resetState: () => set(initialState),
 }));
