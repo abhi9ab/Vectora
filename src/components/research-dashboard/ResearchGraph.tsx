@@ -26,7 +26,7 @@ const ResearchGraph = () => {
               className="flex items-center gap-2 py-2 px-4 rounded-full bg-white/80 backdrop-blur-sm shadow-md hover:shadow-lg transition-all"
             >
               <NetworkIcon className="h-4 w-4" />
-              <span className={isOpen ? "hidden" : "inline"}>Paper Network</span>
+              <span className={isOpen ? "hidden text-gray-300" : "inline text-gray-300"}>Paper Network</span>
               <ChevronDown className={`h-4 w-4 ${isOpen ? "rotate-180" : ""}`} />
               <span className="sr-only">Toggle research graph</span>
             </Button>

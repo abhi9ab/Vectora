@@ -212,7 +212,7 @@ const UserInput = () => {
               disabled={isLoading}
             >
               <Upload className="h-4 w-4 mr-2" />
-              <span className="sm:inline">Add Images</span>
+              <span className="sm:inline text-gray-300">Add Images</span>
             </Button>
 
             <input

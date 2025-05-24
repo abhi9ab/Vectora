@@ -50,7 +50,7 @@ const clarifyResearchGoals = async (
   }
 
   prompt += `
-    Generate 2-4 clarifying questions to help narrow down the research scope. Focus on identifying:
+    Generate 2-3 clarifying questions to help narrow down the research scope. Focus on identifying:
     - Specific aspects of interest
     - Required depth/complexity level
     - Any particular perspective or approach

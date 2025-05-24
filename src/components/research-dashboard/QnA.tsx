@@ -4,6 +4,12 @@ import { useDeepResearchStore } from "@/store/global-state";
 import React, { useEffect } from "react";
 import QuestionForm from "./QuestionForm";
 import { useChat } from "@ai-sdk/react";
+import ResearchActivities from "./ResearchActivities";
+import ResearchReport from "./ResearchReport";
+import ResearchTimer from "./ResearchTimer";
+import CompletedQuestions from "./CompletedQuestions";
+import RetrievedDocuments from "./RetrievedDocuments";
+import ResearchGraph from "./ResearchGraph";
 
 const QnA = () => {
   const {
@@ -108,6 +114,12 @@ const QnA = () => {
   return (
     <div className="flex gap-4 w-full flex-col items-center mb-16">
       <QuestionForm />
+      <CompletedQuestions />
+      <ResearchTimer />
+      <RetrievedDocuments />
+      <ResearchActivities />
+      <ResearchGraph />
+      <ResearchReport />
     </div>
   );
 };

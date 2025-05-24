@@ -63,12 +63,12 @@ const DocumentCard = ({ document }: { document: RagDocument }) => {
             {similarityText}
           </Badge>
         </div>
-        <p className="text-sm text-muted-foreground line-clamp-3">
+        <p className="text-sm line-clamp-3 text-white">
           {document.content}
         </p>
         <div className="text-xs text-muted-foreground flex items-center gap-1">
-          <span>Source:</span>
-          <span className="max-w-[200px] truncate">
+          <span className="text-white">Source:</span>
+          <span className="max-w-[200px] truncate text-blue-500">
             {document.metadata.source || "Knowledge base"}
           </span>
         </div>

@@ -211,9 +211,6 @@ const ResearchReport = () => {
           {cleanReport}
         </Markdown>
       </div>
-
-      <h2>Final Report</h2>
-      <h2>Related Research Papers</h2>
     </Card>
   );
 };
