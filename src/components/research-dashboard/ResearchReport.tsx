@@ -21,8 +21,6 @@ import {
   tablePlugin,
   codeBlockPlugin,
   codeMirrorPlugin,
-  sandpackPlugin,
-  frontmatterPlugin,
   linkPlugin,
   linkDialogPlugin,
   imagePlugin,
@@ -52,11 +50,11 @@ const VisualizationCodeBlock: React.FC<{
   language: string;
   meta?: string;
 }> = ({ code, language, meta }) => {
-  const isVisualization = ['mermaid', 'chartjs', 'd3', 'html'].includes(language);
+  const isVisualization = ['mermaid', 'chartjs', 'html'].includes(language);
   
   if (isVisualization) {
     const visualizationType = 
-      language === 'html' ? 'd3' :
+      language === 'html' ? 'html' :
       language === 'chartjs' ? 'chartjs' :
       language === 'mermaid' ? 'mermaid' : language;
 
@@ -65,7 +63,7 @@ const VisualizationCodeBlock: React.FC<{
         <div className="flex justify-between items-center mb-2">
           <h3 className="text-sm font-medium text-gray-600">
             {visualizationType === 'mermaid' ? 'Diagram' :
-             visualizationType === 'chartjs' ? 'Chart' : 'Data Visualization'}
+             visualizationType === 'chartjs' ? 'Chart' : 'HTML Visualization'}
           </h3>
           <span className="text-xs text-gray-400 uppercase">{language}</span>
         </div>
@@ -305,6 +303,7 @@ const ResearchReport = () => {
 // Markdown renderer component for read-only view
 const MarkdownRenderer: React.FC<{
   content: string;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   visualizationOptions: any;
 }> = ({ content, visualizationOptions }) => {
   const components = {
@@ -314,7 +313,7 @@ const MarkdownRenderer: React.FC<{
 
       if (!inline && visualizationOptions.enabled) {
         const visualizationType =
-          language === 'html' ? 'd3' :
+          language === 'html' ? 'html' :
             language === 'chartjs' ? 'chartjs' :
               language === 'mermaid' ? 'mermaid' : null;
 
@@ -328,7 +327,7 @@ const MarkdownRenderer: React.FC<{
             <div className="my-6 bg-white/80 rounded-lg border border-gray-200 shadow-sm p-4">
               <h3 className="text-sm font-medium text-gray-600 mb-2">
                 {visualizationType === 'mermaid' ? 'Diagram' :
-                  visualizationType === 'chartjs' ? 'Chart' : 'Data Visualization'}
+                  visualizationType === 'chartjs' ? 'Chart' : 'HTML Visualization'}
               </h3>
               <VisualizationRenderer
                 type={visualizationType}
@@ -366,6 +365,7 @@ const MarkdownRenderer: React.FC<{
 // Helper function to render markdown with visualizations
 function renderMarkdownWithVisualizations(
   markdown: string, 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   visualizationOptions: any
 ): string {
   if (!visualizationOptions.enabled) {
@@ -374,7 +374,7 @@ function renderMarkdownWithVisualizations(
 
   let processedContent = markdown;
   const visualizationTypes = visualizationOptions.type === 'all'
-    ? ['mermaid', 'chartjs', 'd3']
+    ? ['mermaid', 'chartjs', 'html']
     : [visualizationOptions.type];
 
   visualizationTypes.forEach(type => {

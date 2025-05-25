@@ -3,7 +3,6 @@ import * as d3 from 'd3';
 import { Author, PaperNode, PaperLink, GraphData, D3Node, D3Link, SemanticScholarPaper, SemanticScholarSearchResponse, GraphConfig } from "@/types/types";
 import { useDeepResearchStore } from "@/store/global-state";
 import PaperDetails from './PaperDetails';
-import type { D3DragEvent } from 'd3';
 
 const ResearchGraphVisualization: React.FC = () => {
   const svgRef = useRef<SVGSVGElement>(null);
@@ -12,6 +11,7 @@ const ResearchGraphVisualization: React.FC = () => {
   const [graphData, setGraphData] = useState<GraphData | null>(null);
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [highlightedNodes, setHighlightedNodes] = useState<Set<string>>(new Set());
   const [dimensions, setDimensions] = useState({ width: 800, height: 500 });
 

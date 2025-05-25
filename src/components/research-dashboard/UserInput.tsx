@@ -410,7 +410,6 @@ const UserInput = () => {
                         <SelectContent>
                           <SelectItem value="mermaid">Diagrams (Mermaid)</SelectItem>
                           <SelectItem value="chartjs">Charts.js</SelectItem>
-                          <SelectItem value="d3">D3 Graphics</SelectItem>
                           <SelectItem value="all">All Types</SelectItem>
                         </SelectContent>
                       </Select>

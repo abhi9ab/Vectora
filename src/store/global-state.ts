@@ -67,6 +67,7 @@ const initialState: DeepResearchState = {
 
 export const useDeepResearchStore = create<
   DeepResearchState & DeepResearchActions
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
 >((set, get) => ({
   ...initialState,
   setTopic: (topic: string) => set({ topic }),
