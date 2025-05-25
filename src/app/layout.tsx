@@ -2,6 +2,7 @@
 import type { Metadata } from "next/types";
 import { Dancing_Script, Inter } from "next/font/google";
 import { ClerkProvider } from "@clerk/nextjs";
+import AuthenticatedLayout from "@/components/layouts/AuthenticatedLayout";
 import { ThemeProvider } from "@/components/landing-page/theme-provider"
 import { dark, shadesOfPurple } from '@clerk/themes';
 import "./globals.css";
@@ -17,7 +18,7 @@ const dancingScript = Dancing_Script({
 });
 
 export const metadata: Metadata = {
-  title: "",
+  title: "Vectora",
   description: "An AI-powered research assistant with RAG, Image analysis, ai agent capabilities for comprehensive insights",
   authors: [{ name: "Vectora Team" }],
   openGraph: {
@@ -50,7 +51,7 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
-            {children}
+            <AuthenticatedLayout>{children}</AuthenticatedLayout>
           </ThemeProvider>
         </body>
       </ClerkProvider>

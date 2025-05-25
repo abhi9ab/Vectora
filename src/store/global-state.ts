@@ -22,6 +22,7 @@ interface DeepResearchState {
   uploadedImageData: ImageData[];
   retrievedDocuments: RagDocument[];
   visualizationOptions: VisualizationOptions;
+  isSaved: boolean; // New property to track if the research is saved
 }
 
 interface DeepResearchActions {
@@ -41,6 +42,7 @@ interface DeepResearchActions {
   setUploadedImageData: (imageData: ImageData[]) => void;
   setRetrievedDocuments: (documents: RagDocument[]) => void;
   setVisualizationOptions: (options: Partial<VisualizationOptions>) => void;
+  setIsSaved: (isSaved: boolean) => void; // New action to set the saved state
   resetState: () => void; // Helper to reset the entire state
 }
 
@@ -63,6 +65,7 @@ const initialState: DeepResearchState = {
     enabled: false,
     type: 'mermaid'
   },
+  isSaved: false, // Initialize the saved state
 };
 
 export const useDeepResearchStore = create<
@@ -96,5 +99,6 @@ export const useDeepResearchStore = create<
         ...options
       }
     })),
+  setIsSaved: (isSaved: boolean) => set({ isSaved }), // Action to set the saved state
   resetState: () => set(initialState),
 }));
