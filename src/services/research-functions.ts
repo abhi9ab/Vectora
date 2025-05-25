@@ -24,7 +24,6 @@ import {
   MAX_CONTENT_CHARS,
   MAX_ITERATIONS,
   MAX_SEARCH_RESULTS,
-  GROQ_MODELS,
   GOOGLE_MODELS,
   HYBRID_MODELS,
   OPENAI_MODELS
@@ -43,8 +42,6 @@ export async function generateSearchQueries(
     let modelConfig;
     if (provider === 'google') {
       modelConfig = GOOGLE_MODELS.PLANNING;
-    } else if (provider === 'groq') {
-      modelConfig = GROQ_MODELS.PLANNING;
     } else if (provider === 'openai') {
       modelConfig = OPENAI_MODELS.PLANNING;
     } else { // hybrid
@@ -147,8 +144,6 @@ export async function extractContent(
     let modelConfig;
     if (provider === 'google') {
       modelConfig = GOOGLE_MODELS.EXTRACTION;
-    } else if (provider === 'groq') {
-      modelConfig = GROQ_MODELS.EXTRACTION;
     } else if (provider === 'openai') {
       modelConfig = OPENAI_MODELS.EXTRACTION;
     } else { // hybrid
@@ -232,8 +227,6 @@ export async function analyzeFindings(
     let modelConfig;
     if (provider === 'google') {
       modelConfig = GOOGLE_MODELS.ANALYSIS;
-    } else if (provider === 'groq') {
-      modelConfig = GROQ_MODELS.ANALYSIS;
     } else if (provider === 'openai') {
       modelConfig = OPENAI_MODELS.ANALYSIS;
     } else { // hybrid
@@ -309,8 +302,6 @@ export async function analyzeImages(
         modelToUse = GOOGLE_MODELS.ANALYSIS;
       } else if (provider === "openai") {
         modelToUse = OPENAI_MODELS.ANALYSIS;
-      } else if (provider === "groq") {
-        modelToUse = GROQ_MODELS.ANALYSIS;
       } else {
         modelToUse = GOOGLE_MODELS.ANALYSIS;
       }
@@ -389,8 +380,6 @@ export async function generateReport(researchState: ResearchState, activityTrack
     let modelConfig;
     if (provider === 'google') {
       modelConfig = GOOGLE_MODELS.REPORT;
-    } else if (provider === 'groq') {
-      modelConfig = GROQ_MODELS.REPORT;
     } else if (provider === 'openai') {
       modelConfig = OPENAI_MODELS.REPORT;
     } else { // hybrid

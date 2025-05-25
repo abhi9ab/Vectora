@@ -1,6 +1,5 @@
 import { createGoogleGenerativeAI } from '@ai-sdk/google';
 import { createOpenAI } from '@ai-sdk/openai';
-import { createGroq } from '@ai-sdk/groq';
 import Exa from "exa-js"
 import { ImageAnnotatorClient } from '@google-cloud/vision';
 
@@ -12,10 +11,6 @@ export const google = createGoogleGenerativeAI({
 
 export const openai = createOpenAI({
   apiKey: process.env.OPENAI_API_KEY || "",
-});
-
-export const groq = createGroq({
-  apiKey: process.env.GROQ_API_KEY || "",
 });
 
 export const visionClient = new ImageAnnotatorClient({
