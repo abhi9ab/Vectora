@@ -127,7 +127,7 @@ If visualizations are requested, include appropriate diagram code:
   - Avoid complex nested subgraphs that could cause rendering errors
   - Always test the flow of your diagram logic for completeness
 - For Charts.js, use \`\`\`chartjs ... \`\`\` with valid JSON configuration
-- For HTML visualizations, provide the code in \`\`\`html ... \`\`\` blocks
+- For D3.js, provide the visualization code in \`\`\`html ... \`\`\` blocks with embedded D3 JavaScript
 
 Here's an example of valid Mermaid syntax for a simple flowchart:
 \`\`\`mermaid
@@ -163,5 +163,5 @@ I've gathered the following research findings to help with this report:
 <research_findings>${contentText}</research_findings>
 
 ${visualizations?.enabled ?
-    `Please include visualizations in the report using ${visualizations.type === 'all' ? 'a mix of mermaid diagrams and Charts.js' : visualizations.type} to illustrate key concepts, data, processes, or relationships. Include at least 2-3 appropriate visualizations that enhance understanding of the topic.`
+    `Please include visualizations in the report using ${visualizations.type === 'all' ? 'a mix of mermaid diagrams, Charts.js, and D3.js' : visualizations.type} to illustrate key concepts, data, processes, or relationships. Include at least 2-3 appropriate visualizations that enhance understanding of the topic.`
     : 'Do not include visualizations in the report.'}`;

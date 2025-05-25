@@ -8,7 +8,7 @@ export interface ImageData {
 
 export interface VisualizationOptions {
   enabled: boolean;
-  type: 'mermaid' | 'chartjs' | 'html' | 'all';
+  type: 'mermaid' | 'chartjs' | 'd3' | 'all';
 }
 
 export interface ResearchFindings {
