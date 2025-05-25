@@ -5,7 +5,6 @@ import UserInput from "@/components/research-dashboard/UserInput";
 import { UserButton } from "@clerk/nextjs";
 import Image from "next/image";
 import bg from "../../public/background.png";
-import Link from 'next/link';  // Add this import at the top with other imports
 
 export default function Home() {
   const { userId } = auth();
@@ -40,11 +39,9 @@ export default function Home() {
       </div>
 
       <div className="flex flex-col items-center gap-6 mt-12">
-          <Link href="/">
-            <h1 className="text-5xl sm:text-8xl font-bold font-dancing-script italic bg-gradient-to-r from-purple-300 to-indigo-300 bg-clip-text text-transparent drop-shadow-lg cursor-pointer">
-              Vectora
-            </h1>
-          </Link>
+          <h1 className="text-5xl sm:text-8xl font-bold font-dancing-script italic bg-gradient-to-r from-purple-300 to-indigo-300 bg-clip-text text-transparent drop-shadow-lg">
+            Vectora
+          </h1>
           <p className="text-white/90 text-center max-w-[90vw] sm:max-w-[50vw] text-lg">
             Enter a topic and answer a few questions to generate a comprehensive research report.
           </p>
