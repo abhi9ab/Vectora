@@ -289,8 +289,4 @@ MIT License - See LICENSE for details.
 
 ### 🌟 **Show some love with a star!** ⭐
 
-![GitHub stars](https://img.shields.io/github/stars/your-org/Vectora?style=social)
-![GitHub forks](https://img.shields.io/github/forks/your-org/Vectora?style=social)
-![GitHub watchers](https://img.shields.io/github/watchers/your-org/Vectora?style=social)
-
 </div>
