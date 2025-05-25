@@ -255,21 +255,21 @@ MIT License - See LICENSE for details.
 <img src="https://avatars.githubusercontent.com/abhi9ab?v=4" width="100px;" alt="Abhi"/><br />
 <sub><b>Abhi9ab</b></sub>
 </a><br />
-<a href="https://github.com/abhi9ab/Vectora/commits?author=abhi9ab" title="Code">commits</a>
+<a href="https://github.com/abhi9ab/Vectora/commits/main/?author=abhi9ab" title="Code">commits</a>
 </td>
 <td align="center">
 <a href="https://github.com/mayankch283">
 <img src="https://avatars.githubusercontent.com/mayankch283?v=4" width="100px;" alt="Mayank"/><br />
 <sub><b>Mayank</b></sub>
 </a><br />
-<a href="https://github.com/mayankch283/Vectora/commits?author=mayankch283" title="Code">commits</a>
+<a href="https://github.com/abhi9ab/Vectora/commits/main/?author=mayankch283" title="Code">commits</a>
 </td>
 <td align="center">
 <a href="https://github.com/goussssss">
 <img src="https://avatars.githubusercontent.com/goussssss?v=4" width="100px;" alt="Gouss"/><br />
 <sub><b>Gouse</b></sub>
 </a><br />
-<a href="https://github.com/goussssss/Vectora/commits?author=goussssss" title="Code">commits</a>
+<a href="https://github.com/abhi9ab/Vectora/commits/main/?author=goussssss" title="Code">commits</a>
 </td>
 </tr>
 </table>
