@@ -374,7 +374,7 @@ export async function generateReport(researchState: ResearchState, activityTrack
 
     const contentText = combineFindings(researchState.findings);
 
-    const provider = researchState.provider || "google";
+    const provider = researchState.provider || "openai";
     console.log(`Provider in generateReport: ${provider}`);
 
     let modelConfig;

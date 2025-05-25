@@ -54,7 +54,7 @@ const initialState: DeepResearchState = {
   activities: [],
   sources: [],
   report: "",
-  selectedProvider: 'hybrid',
+  selectedProvider: 'openai',
   selectedEmbeddingProvider: 'openai',
   useRAG: true,
   uploadedImageData: [],

@@ -11,7 +11,7 @@ export async function POST(req: Request) {
 
     const topic = parsed.topic;
     const clerifications = parsed.clarifications;
-    const provider = parsed.provider || "hybrid";
+    const provider = parsed.provider || "openai";
     const embeddingProvider = parsed.embeddingProvider || "openai";
     const useRAG = parsed.useRAG !== undefined ? parsed.useRAG : true;
     const images = parsed.images || [];

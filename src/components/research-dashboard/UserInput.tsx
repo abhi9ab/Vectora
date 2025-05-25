@@ -283,8 +283,8 @@ const UserInput = () => {
                       <SelectValue placeholder="Select model" />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="hybrid">Hybrid (Recommended)</SelectItem>
-                      <SelectItem value="openai">OpenAI</SelectItem>
+                      <SelectItem value="openai">OpenAI (Recommended)</SelectItem>
+                      <SelectItem value="hybrid">Hybrid</SelectItem>
                       <SelectItem value="google">Google Gemini</SelectItem>
                     </SelectContent>
                   </Select>

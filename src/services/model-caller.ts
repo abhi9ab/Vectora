@@ -11,7 +11,7 @@ export async function callModel<T>({
   system,
   schema,
   activityType = "generate",
-  provider = "hybrid",
+  provider = "openai",
   structuredOutput = true,
   images = []
 }: ModelCallOptions<T>,
