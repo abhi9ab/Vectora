@@ -62,7 +62,7 @@ Our solution is a transparent and scalable AI research agent that mimics human r
 <div align="center">
 
 ### 📺 **Watch Our Demo**
-[![Deep Research AI Agent Demo](https://img.youtube.com/vi/197l6zDGWpg/0.jpg)](https://www.youtube.com/watch?v=197l6zDGWpg)
+[![Deep Research AI Agent Demo](https://img.youtube.com/vi/huvxcO8vnMI/0.jpg)](https://www.youtube.com/watch?v=huvxcO8vnMI)
 
 ![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=14&duration=2000&pause=1000&color=4ECDC4&center=true&width=500&lines=Click+to+watch+our+amazing+demo!+▶️)
 
@@ -70,17 +70,19 @@ Our solution is a transparent and scalable AI research agent that mimics human r
 
 ### 🖼️ **Application Screenshots**
 
-<div align="center">
+<table>
+  <tr>
+    <td><img src="./public/image3.jpg" width="600" style="padding:10px"/></td>
+    <td><img src="./public/image4.jpg" width="600" style="padding:10px"/></td>
+  </tr>
+  <tr>
+    <td><img src="./public/image2.jpg" width="600" style="padding:10px"/></td>
+    <td><img src="./public/image1.jpg" width="600" style="padding:10px"/></td>
+  </tr>
+</table>
 
-![image](https://github.com/user-attachments/assets/4bb3b477-041b-4301-9372-75c47a4405b0)
 
-*Main Dashboard Interface*
 
-![image](https://github.com/user-attachments/assets/09c3de70-6e9c-488d-8c00-bcd78762e763)
-
-*Research Analysis View*
-
-</div>
 
 ### 📐 **System Architecture**
 [🔗 **View Interactive Diagrams**](https://excalidraw.com/#json=FpZpLCIPMwDaXG4fR2RZL,wkmPKRKKAT_55XlcsuiALQ)
