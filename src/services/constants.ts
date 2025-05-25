@@ -2,19 +2,19 @@ export const MAX_ITERATIONS = 3;
 export const MAX_SEARCH_RESULTS = 3;
 export const MAX_CONTENT_CHARS = 10000;
 export const MAX_RETRY_ATTEMPTS = 3;
-export const RETRY_DELAY_MS = 1000;
+export const RETRY_DELAY_MS = 3000;
 
 export const GROQ_MODELS = {
-  PLANNING: "llama3-70b-8192",
-  EXTRACTION: "llama3-70b-8192",
-  ANALYSIS: "llama3-70b-8192",
-  REPORT: "llama3-70b-8192"
+  PLANNING: "llama-3.1-8b-instant",
+  EXTRACTION: "llama-3.1-8b-instant",
+  ANALYSIS: "llama-3.1-8b-instant",
+  REPORT: "llama-3.1-8b-instant"
 };
 
 export const OPENAI_MODELS = {
-  PLANNING: "gpt-4o-mini",
-  EXTRACTION: "gpt-4o-mini",
-  ANALYSIS: "gpt-4o-mini",
+  PLANNING: "gpt-4o",
+  EXTRACTION: "gpt-4o",
+  ANALYSIS: "gpt-4o",
   REPORT: "gpt-4o"
 };
 
