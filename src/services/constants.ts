@@ -2,7 +2,7 @@ export const MAX_ITERATIONS = 3;
 export const MAX_SEARCH_RESULTS = 3;
 export const MAX_CONTENT_CHARS = 10000;
 export const MAX_RETRY_ATTEMPTS = 3;
-export const RETRY_DELAY_MS = 3000;
+export const RETRY_DELAY_MS = 20000;
 
 export const GROQ_MODELS = {
   PLANNING: "llama-3.1-8b-instant",
