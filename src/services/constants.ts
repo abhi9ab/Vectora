@@ -5,10 +5,10 @@ export const MAX_RETRY_ATTEMPTS = 3;
 export const RETRY_DELAY_MS = 20000;
 
 export const OPENAI_MODELS = {
-  PLANNING: "gpt-4o",
-  EXTRACTION: "gpt-4o",
-  ANALYSIS: "gpt-4o",
-  REPORT: "gpt-4o"
+  PLANNING: "gpt-4o-mini",
+  EXTRACTION: "gpt-4o-mini",
+  ANALYSIS: "gpt-4o-mini",
+  REPORT: "gpt-4o-mini"
 };
 
 export const GOOGLE_MODELS = {
@@ -22,5 +22,5 @@ export const HYBRID_MODELS = {
   PLANNING: "gemini-2.0-flash",
   EXTRACTION: "gpt-4o-mini",
   ANALYSIS: "gpt-4o-mini",
-  REPORT: "gpt-4o"
+  REPORT: "gpt-4o-mini"
 };
