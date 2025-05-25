@@ -156,21 +156,3 @@
   rx: 8px;
   ry: 8px;
 }
-
-/* globals.css */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-html,
-body {
-  @apply antialiased;
-}
-
-body {
-  @apply min-h-screen bg-gradient-to-b from-gray-50 to-gray-100;
-}
-
-#__next {
-  @apply min-h-screen;
-}

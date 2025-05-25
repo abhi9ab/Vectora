@@ -8,6 +8,7 @@ import remarkGfm from "remark-gfm";
 import { Download, Edit, Save, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import VisualizationRenderer from "./VisualizationRenderer";
+import ResearchGraphVisualization from './ResearchGraphVisualization';
 
 // MDX Editor imports
 import {
@@ -148,38 +149,6 @@ const ResearchReport = () => {
     document.body.removeChild(a);
     URL.revokeObjectURL(url);
   }, [editableContent, cleanReport, isEditing, topic]);
-
-  // Add this new function
-  const saveReportToDatabase = async () => {
-    try {
-      const response = await fetch('/api/reports/save', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          topic,
-          content: cleanReport,
-        }),
-      });
-
-      if (!response.ok) {
-        throw new Error('Failed to save report');
-      }
-
-      const data = await response.json();
-      console.log('Report saved successfully:', data.id);
-    } catch (error) {
-      console.error('Error saving report:', error);
-    }
-  };
-
-  // Add useEffect to save report when it's completed
-  useEffect(() => {
-    if (isCompleted && cleanReport) {
-      saveReportToDatabase();
-    }
-  }, [isCompleted, cleanReport]);
 
   if (!isCompleted) return null;
 
